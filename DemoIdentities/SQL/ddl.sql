@@ -1,0 +1,47 @@
+/*
+	DEMO DATA DDL
+
+	This ddl file contains the structure of the database tables for demo identities and addresses. 
+	
+*/
+
+
+/*
+	DEMO DATA GERMANY
+*/
+create table DEMO_IDENTITY_GERMANY (
+	 ID 			INTEGER PRIMARY KEY
+	,FIRSTNAME		VARCHAR(50)
+	,SURNAME		VARCHAR(50)
+	,GENDER			VARCHAR(5)
+);
+
+
+create table DEMO_ADDRESSES_GERMANY (
+	 ID				INTEGER PRIMARY KEY
+	,STREET 		VARCHAR(100)
+	,ZIP 			VARCHAR(10)
+	,CITY 			VARCHAR(100)
+);
+
+
+
+create table demo_addresses_helper (
+	 ID				INTEGER PRIMARY KEY
+	,STREET 		VARCHAR(100)
+	,ZIP 			VARCHAR(10)
+	,CITY 			VARCHAR(100)
+);
+
+insert into demo_addresses_germany(
+	select 
+		row_number() over (order by street )as ID
+		,street
+		,zip
+		,city
+	from DEMO_ADDRESSES_GERMANY
+	where street ~ '^[^0-9]'
+	OR	length(street) >= 3
+	OR 	street not like '-%'
+
+)

@@ -33,15 +33,12 @@ create table demo_addresses_helper (
 	,CITY 			VARCHAR(100)
 );
 
-insert into demo_addresses_germany(
-	select 
-		row_number() over (order by street )as ID
-		,street
-		,zip
-		,city
-	from DEMO_ADDRESSES_GERMANY
-	where street ~ '^[^0-9]'
-	OR	length(street) >= 3
-	OR 	street not like '-%'
-
-)
+create table DEMO_IDENTITIES_FULL_GERMANY(
+	 ID				INTEGER PRIMARY KEY
+	,FIRSTNAME		VARCHAR(50)
+	,SURNAME		VARCHAR(50)
+	,GENDER			VARCHAR(5)
+	,STREET			VARCHAR(100)
+	,ZIP			VARCHAR(10)
+	,CITY			VARCHAR(100)
+);

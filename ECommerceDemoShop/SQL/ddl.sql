@@ -50,6 +50,11 @@ create table CORE.PRODUCTS (
 
 
 create table CORE.RETAILER_PRODUCT (
-    product_id        INTEGER 
-    ,retailer_id      INTEGER 
+    PRODUCT_ID        INTEGER 
+    ,RETAILER_ID      INTEGER 
+);
+
+create table CORE.CUSTOMERS_BASKET (
+	CUSTOMER_ID 	 INTEGER
+	,BASKET_ID 		 VARCHAR(50)		
 );

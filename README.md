@@ -10,6 +10,16 @@ The AdventureWorks demo datase of Microsoft. Mostly used for Power BI. The demo 
 - PRODUCT_DATA
 - CUSTOMER_DATA
 
+## BI-Assessment
+The BI-Assessment database consists of six tables:
+- PRODUCTS
+- ORDERS
+- CUSTOMERS
+- RETAILER
+- RETAILER_PRODUCT
+- RESELLER_LEVEL
+- CUSTOMERS_BASKET
+
 ## DemoShop 
 The DemoShop database consists of eight tables of a fictional shop.
 - CUSTOMERS

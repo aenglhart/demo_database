@@ -11,8 +11,7 @@ local instance of pgSQL.
 - follow the database setup script setup_database.sql
 
 ## Database Structure
-```
-mermaid
+
 ```mermaid
 erDiagram
 
@@ -81,8 +80,7 @@ RETAILER ||--||RESELLER_LEVEL: retailer_id
 ```
 
 The database also has schema called lake:
-```
-mermaid
+```mermaid
 erDiagram
 RETAILER_AD_CAMPAIGN_DL{
 	RT_AD_H_SK      	VARCHAR(100) PK
